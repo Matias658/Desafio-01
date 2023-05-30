@@ -7,7 +7,7 @@ def recorrer_lista(lista:list):
         print("-------------------------------------")
 #--------------------------------------------------------------------------------------------------------------------------------------
 #Recorrer nombres y alturas
-def nombres_alturas_heroes(lista:list, key:str, key2:str = False):
+def nombres_alturas_heroes(lista:list, key:str, key2:str = False)->list:
     lista_nombres_alturas = []
     for persona in lista:
         nombre = persona[key]
@@ -21,7 +21,7 @@ def nombres_alturas_heroes(lista:list, key:str, key2:str = False):
     return lista_nombres_alturas
 #--------------------------------------------------------------------------------------------------------------------------------------
 #Encontrar el valor maximo de lo que quieras.
-def encontrar_max_min(lista:list, key:float, key2:str = False, maximo:bool = True, minimo:bool = False):
+def encontrar_max_min(lista:list, key:str, key2:str = False, maximo:bool = True, minimo:bool = False)->list:
     
     lista_maxima_minima = []
     if maximo:
@@ -48,7 +48,7 @@ def encontrar_max_min(lista:list, key:float, key2:str = False, maximo:bool = Tru
     return lista_maxima_minima
 #--------------------------------------------------------------------------------------------------------------------------------------
 #Promedio
-def sacar_promedio(lista:list, key:str):
+def sacar_promedio(lista:list, key:str)->float:
     altura_total = 0
     for item in lista:
         altura = float(item[key])
@@ -62,7 +62,7 @@ def sacar_promedio(lista:list, key:str):
 #--------------------------------------------------------------------------------------------------------------------------------------
 #*************************************************DESAFÍO 01***************************************************************************
 #Filtrar lista
-def filtrar_lista(lista:list, key:str, key2:str, key3:str, key4:str = False):
+def filtrar_lista(lista:list, key:str, key2:str, key3:str, key4:str = False)->list:
     lista_filtrada = []
     
     for item in lista:
@@ -73,7 +73,7 @@ def filtrar_lista(lista:list, key:str, key2:str, key3:str, key4:str = False):
     return lista_filtrada
 #--------------------------------------------------------------------------------------------------------------------------------------
 #Determinar cuántos superhéroes tienen cada tipo de color de ojos.
-def esta_en_lista(lista:list, item:str)->bool:
+def esta_en_lista(lista:list, item:str)->bool: 
     esta = False
     for elemento in lista:
         if elemento == item:
@@ -81,7 +81,7 @@ def esta_en_lista(lista:list, item:str)->bool:
             break
     return esta
 
-def contar_repetidos(lista:list, key:str, key2:str):
+def contar_repetidos(lista:list, key:str, key2:str)->list:
     lista_sin_repetir = []
     color_ojos = []
     for item in lista:
@@ -98,7 +98,7 @@ def contar_repetidos(lista:list, key:str, key2:str):
     return color_ojos
 #--------------------------------------------------------------------------------------------------------------------------------------
 #Listar todos los superhéroes agrupados por color de ojos./pelo/inteligencia
-def listar_por_tipo(lista:list, key:str, key2:str):
+def listar_por_tipo(lista:list, key:str, key2:str)->None:
     lista_heores = []
     for item in lista:
         if not esta_en_lista(lista_heores, item[key]) or item[key] == "":
